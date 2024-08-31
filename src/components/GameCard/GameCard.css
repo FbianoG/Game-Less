@@ -1,0 +1,75 @@
+.game__card {
+    width: 200px;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    border-radius: .4rem;
+    list-style: none;
+    overflow: hidden;
+    cursor: pointer;
+
+    &:hover .game__card-data {
+        background: #444549;
+    }
+
+    &:hover img {
+        filter: brightness(.7);
+    }
+}
+
+.game__card img {
+    width: 100%;
+    height: 240px;
+    transition: .3s;
+}
+
+.game__card-data {
+    height: 80px;
+    background: #2c2d31;
+    padding: .5rem;
+    transition: .3s;
+
+
+}
+
+.game__card-data p {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #eee;
+    font-weight: 500;
+}
+
+.game__card-data span {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #999;
+    font-size: 14px;
+}
+
+.game__card-data .priceCut {
+    text-decoration: line-through;
+    color: #555;
+}
+
+.game__card-data h5 {
+    color: #5ab45a;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+
+/* MB <= 767 - TB <= 1023 - */
+@media screen and (max-width: 767px) {
+    .game__card {
+        width: 120px;
+        min-width: 120px;
+    }
+
+    .game__card img {
+        width: 100%;
+        height: 150px;
+        transition: .3s;
+    }
+}

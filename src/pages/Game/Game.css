@@ -1,0 +1,98 @@
+.game {
+    padding: 2rem 5% 0 calc(280px + 5%);
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background: linear-gradient(to bottom, #000, transparent);
+}
+
+.game .content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.game .content__title {
+    font-size: 32px;
+    color: #fdfdfd;
+    font-weight: 500;
+}
+
+.game .content__discount {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    color: #eee;
+}
+
+.game .content__discount i {
+    border: 1px solid #2bc432;
+    padding: .5rem;
+    border-radius: .5rem;
+}
+
+.game .content__description {
+    color: #888;
+}
+
+.game .poster {
+    display: flex;
+    justify-content: center;
+}
+
+.game .poster img {
+    width: 300px;
+    box-shadow: 0 0 50px 8px #000;
+}
+
+.game .groupBtn {
+    margin: 2rem 0;
+    display: flex;
+    gap: 1rem;
+    grid-column: span 2;
+}
+
+.game .groupBtn button {
+    padding: 1rem;
+    border-radius: .75rem;
+    border: none;
+    color: #eee;
+    background: #555;
+    outline: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: .3s;
+
+    &:hover {
+        filter: brightness(1.2);
+    }
+}
+
+.game .groupBtn button span {
+    color: #aaa;
+}
+
+
+/* MB <= 767 - TB <= 1023 - */
+@media screen and (max-width: 767px) {
+    .game {
+        padding: 0 5% 0 calc(60px + 5%);
+        display: block;
+    }
+
+    .game .content {
+        padding: 30px 0 ;
+    }
+
+    .game .groupBtn {
+        justify-content: space-around;
+    }
+    .game .groupBtn button {
+        padding: .5rem ;
+        font-size: 14px;
+    }
+
+    .game .poster img {
+        width: 250px;
+    }
+}

@@ -1,0 +1,17 @@
+.libs {
+    padding: 2rem 5% 0 calc(280px + 5%);
+}
+
+.libs__list {
+    margin: 0 0 100px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+/* MB <= 767 - TB <= 1023 - */
+@media screen and (max-width: 767px) {
+    .libs {
+        padding: 0 5% 0 calc(60px + 5%);
+    }
+}

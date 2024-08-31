@@ -1,0 +1,43 @@
+.home {
+    padding: 2rem 5% 0 calc(280px + 5%);
+}
+
+
+
+.home .searchBar__item h5 {}
+
+
+.home .groupButtons {
+    margin: 0 0 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.home .groupButtons button {
+    padding: 1rem;
+    /* font-size: 16px; */
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    text-transform: uppercase;
+    border: none;
+    border-radius: .5rem;
+    color: #eee;
+    background: linear-gradient(to bottom right, #17b346, #1a69c4);
+    transition: .3s;
+    cursor: pointer;
+
+    &:hover {
+        filter: brightness(1.2);
+    }
+}
+
+
+/* MB <= 767 - TB <= 1023 - */
+@media screen and (max-width: 767px) {
+    .home {
+        padding: 0 5% 0 calc(60px + 5%) ;
+    }
+}

@@ -1,0 +1,15 @@
+.gamesList {
+    margin: 0 0 100px ;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.gamesList__title {
+    padding: 1rem  0;
+    color: #fdfdfd;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 30px;
+    border-bottom: 1px solid #fff2;
+}
