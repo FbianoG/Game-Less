@@ -1,3 +1,3 @@
-const UrlApi = 'postgresql://postgres:essiDvDJvbjEpSwznzGBZhocvgXimJWg@junction.proxy.rlwy.net:23093/railway'
+const UrlApi = 'https://games-less-back-production.up.railway.app'
 
 export default UrlApi
