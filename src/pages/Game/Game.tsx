@@ -37,6 +37,7 @@ const Game = () => {
     const loadGame = async () => { // get jogo selecionado
         try {
             const gameId = new URLSearchParams(window.location.search).get("id")
+            if (!gameId) throw new Error("Jogo não encontrado")
             const response = await getGame(gameId)
             setGame(response[0])
         } catch (error: any) {

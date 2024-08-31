@@ -1,5 +1,5 @@
 import './CategoryList.css'
-import { useEffect, useRef } from 'react'
+import {useRef } from 'react'
 import { GamesApi } from '../../interfaces/games'
 import GameCard from '../GameCard/GameCard'
 

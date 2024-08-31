@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { createUser, login, verifyUser } from '../../api/user'
+import { createUser, login } from '../../api/user'
 import './Modal.css'
 
 import { useForm, SubmitHandler } from "react-hook-form";

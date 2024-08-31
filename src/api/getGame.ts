@@ -1,7 +1,7 @@
 import axios from "axios"
 import UrlApi from "./UrlApi"
 
-const getGame = async (gameId) => {
+const getGame = async (gameId: string) => {
     try {
         const response = await axios.get(`${UrlApi}/getGame?id=${gameId}`)
         return response.data
