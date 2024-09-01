@@ -41,7 +41,7 @@ const Libs = () => {
                 {userGames && <>
                     <h3 className='gamesList__title'>Meus jogos - {(userGames.length)}</h3>
                     <ul className='libs__list'>
-                        {games && games.length > 0 && userGames.length > 0 && games.map(element => {
+                        {games && userGames && games.length > 0 && userGames.length > 0 && games.map(element => {
                             const findGame = userGames.find(e => e.game_id === element.id)
                             if (!findGame) return
                             return <GameCard key={element.id} game={element} isLib={findGame.create_at} />

@@ -1,11 +1,9 @@
 .home {
+    min-height: 100dvh;
     padding: 2rem 5% 0 calc(280px + 5%);
+    display: flex;
+    flex-direction: column;
 }
-
-
-
-.home .searchBar__item h5 {}
-
 
 .home .groupButtons {
     margin: 0 0 60px;

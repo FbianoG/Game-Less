@@ -1,5 +1,8 @@
 .libs {
+    min-height: 100dvh;
     padding: 2rem 5% 0 calc(280px + 5%);
+    display: flex;
+    flex-direction: column;
 }
 
 .libs__list {
