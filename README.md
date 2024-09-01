@@ -1,50 +1,22 @@
-# React + TypeScript + Vite
+# Game Less Catalog
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Descrição
+O GameLess Catalog é uma aplicação web que permite aos usuários explorar e adquirir jogos, semelhante ao modelo do Xbox Game Pass. Os usuários podem criar uma conta, visualizar detalhes dos jogos e adquirir títulos disponíveis no catálogo.
 
-Currently, two official plugins are available:
+### Tecnologias Utilizadas
+- Frontend: React, TypeScript
+- Backend: Node.js, Express
+- Banco de Dados: PostgreSQL
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Fucionalidades
+- Catálogo de Jogos: Navegue e descubra uma vasta gama de jogos.
+- Detalhes dos Jogos: Veja informações detalhadas sobre cada jogo.
+- Criação de Conta: Crie uma conta para gerenciar suas aquisições.
+- Aquisição de Jogos: Adquira jogos diretamente através da plataforma.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Estrutura do Projeto
+### Frontend: 
+Contém o código do frontend da aplicação em React.
+### Backend: 
+Contém o código do backend da aplicação em Node.js e as configurações do banco de dados PostgreSQL. 
+[Game Less - Backend](https://github.com/FbianoG/Games-Less-Back) 
