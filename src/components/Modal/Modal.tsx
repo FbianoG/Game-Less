@@ -30,8 +30,6 @@ const Modal: React.FC<ModalProps> = ({ onClick, setUser, type, game }) => {
 
     const [create, setCreate] = useState<boolean>(false)
 
-    useEffect(() => { document.body.style.overflow = 'hidden' }, [])
-
     const handleLogin: SubmitHandler<InputForm> = async (data) => {
         setTextAlert(undefined)
         try {
