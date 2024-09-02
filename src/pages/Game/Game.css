@@ -1,12 +1,17 @@
 .game {
     min-height: 100dvh;
     padding: 2rem 5% 0 calc(280px + 5%);
-    display: grid;
-    grid-template-columns: 50% 50%;
+    display: flex;
+    flex-direction: column;
     background: linear-gradient(to bottom, #000, transparent);
 }
 
 .game .content {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.game .content__data {
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -42,7 +47,9 @@
 
 .game .poster img {
     width: 300px;
+    max-width: 100%;
     box-shadow: 0 0 50px 8px #000;
+    aspect-ratio: 2/3;
 }
 
 .game .groupBtn {
@@ -77,19 +84,22 @@
 /* MB <= 767 - TB <= 1023 - */
 @media screen and (max-width: 767px) {
     .game {
-        padding: 0 5% 0 calc(60px + 5%);
+        padding: 5% 0;
         display: block;
     }
 
     .game .content {
-        padding: 30px 0 ;
+        padding: 30px 0;
+        gap: 2rem;
+        grid-template-columns: 1fr;
     }
 
     .game .groupBtn {
         justify-content: space-around;
     }
+
     .game .groupBtn button {
-        padding: .5rem ;
+        padding: .5rem;
         font-size: 14px;
     }
 

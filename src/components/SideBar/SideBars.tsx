@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Modal from '../Modal/Modal'
 import './SideBar.css'
 
@@ -20,8 +20,18 @@ const SideBar = () => {
         location.reload()
     }
 
+    const [ShowSideBar, setShowSideBar] = useState(false)
+
+    const handleShowSideBar = () => {
+        if (ShowSideBar) {
+            setShowSideBar(false)
+        } else {
+            setShowSideBar(true)
+        }
+    }
+
     return (
-        <div className='sideBar'>
+        <div className='sideBar' style={ShowSideBar ? { left: "0" } : {}}>
             <img src='logoTitle.png' alt='' className='logo__titile' />
             {!user && <div className="header" onClick={() => setShowModal(true)}>
                 <div className="header__data" style={{ padding: '0 0 0 1rem' }} >
@@ -46,6 +56,11 @@ const SideBar = () => {
             {user && <button className='sideBar__btn-logout' onClick={logout}>Logout<i className="fa-solid fa-right-from-bracket"></i></button>}
 
             {showModal && <Modal type='login' onClick={setShowModal} setUser={setUser} />}
+
+            {!ShowSideBar && <div className="sideBar__btnShow" title='Mostrar menu' onClick={handleShowSideBar}>
+                <i className="fa-solid fa-chevron-right"></i>
+            </div>}
+            {ShowSideBar && <div className='sideBar__backdrop' onClick={handleShowSideBar}></div>}
         </div>
     )
 }

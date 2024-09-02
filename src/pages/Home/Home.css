@@ -36,6 +36,6 @@
 /* MB <= 767 - TB <= 1023 - */
 @media screen and (max-width: 767px) {
     .home {
-        padding: 0 5% 0 calc(60px + 5%) ;
+        padding: 0 5% ;
     }
 }

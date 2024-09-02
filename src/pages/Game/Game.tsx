@@ -84,19 +84,19 @@ const Game = () => {
 
                 {game && <>
                     <div className="content">
-                        <h2 className='content__title'>{game.name}</h2>
-
-                        <div className="content__discount">
-                            <i className="fa-solid fa-tag"></i>
-                            {game.promo > 0 ? <span>{game.promo}% de desconto</span> : <span>Preço original</span>}
+                        <div className="content__data">
+                            <h2 className='content__title'>{game.name}</h2>
+                            <div className="content__discount">
+                                <i className="fa-solid fa-tag"></i>
+                                {game.promo > 0 ? <span>{game.promo}% de desconto</span> : <span>Preço original</span>}
+                            </div>
+                            <div className="content__description">{game.description}</div>
                         </div>
-
-                        <div className="content__description">{game.description}</div>
+                        <div className="poster">
+                            <img src={game.poster} alt={game.name} />
+                        </div>
                     </div>
 
-                    <div className="poster">
-                        <img src={game.poster} alt={game.name} />
-                    </div>
 
                     <div className="groupBtn">
                         <button style={{ background: '#358b34' }}>Instalar</button>
@@ -123,11 +123,11 @@ const Game = () => {
                 {games &&
                     <div style={{ gridColumn: 'span 2' }}>
                         <CategoryList title='Jogos similares' games={games} />
-                        <Footer />
                     </div>
                 }
                 {game && !games && <Loading />}
 
+                <Footer />
 
             </div >
 

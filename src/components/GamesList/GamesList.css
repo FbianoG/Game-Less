@@ -13,3 +13,10 @@
     margin: 0 0 30px;
     border-bottom: 1px solid #fff2;
 }
+
+/* MB <= 767 - TB <= 1023 - */
+@media screen and (max-width: 767px) {
+    .gamesList {
+        justify-content: space-around;
+    }
+}

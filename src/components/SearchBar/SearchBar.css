@@ -80,3 +80,10 @@
 color: #777;
 font-size: 14px;
 }
+
+/* MB <= 767 - TB <= 1023 - */
+@media screen and (max-width: 767px) {
+    .searchBar {
+        margin-top: 40px ;
+    }
+}
