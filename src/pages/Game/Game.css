@@ -84,7 +84,7 @@
 /* MB <= 767 - TB <= 1023 - */
 @media screen and (max-width: 767px) {
     .game {
-        padding: 5% 0;
+        padding: 0 5%;
         display: block;
     }
 
