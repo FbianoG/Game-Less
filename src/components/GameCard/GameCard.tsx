@@ -1,8 +1,8 @@
-import axios from 'axios'
+// import axios from 'axios'
 import { GamesApi } from '../../interfaces/games'
 import calculateDiscount from '../../utils/calculateDiscount'
 import './GameCard.css'
-import UrlApi from '../../api/UrlApi'
+// import UrlApi from '../../api/UrlApi'
 
 interface GameCardProps {
     game: GamesApi
