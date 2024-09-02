@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { createUser, login } from '../../api/user'
 import './Modal.css'
 
