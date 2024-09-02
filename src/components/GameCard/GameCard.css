@@ -17,6 +17,28 @@
     }
 }
 
+.game__card.typeList {
+    min-width: 100%;
+    flex-direction: row;
+
+}
+
+.game__card.typeList img {
+    width: 50px;
+}
+
+.game__card.typeList .game__card-data {
+    width: 100%;
+    background: #232327;
+    height: auto;
+    min-height: 80px;
+    overflow: hidden;
+}
+
+.game__card.typeList .game__card-data p {
+    font-size: 20px;
+}
+
 .game__card img {
     width: 100%;
     aspect-ratio: 4/5;
@@ -26,11 +48,10 @@
 
 .game__card-data {
     height: 80px;
-    background: #2c2d31;
     padding: .5rem;
+    position: relative;
+    background: #2c2d31;
     transition: .3s;
-
-
 }
 
 .game__card-data p {
@@ -59,6 +80,24 @@
     color: #5ab45a;
     font-weight: normal;
     font-size: 16px;
+}
+
+.game__card-data button {
+    padding: .25rem ;
+    position: absolute;
+    right: 1rem;
+    top: 45px;
+    background: none;
+    color: #e64c4c;
+    border: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: .3s;
+
+    &:hover {
+        color: #444;
+    }
 }
 
 

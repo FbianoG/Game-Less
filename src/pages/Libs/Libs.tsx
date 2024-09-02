@@ -32,6 +32,8 @@ const Libs = () => {
         }
     }
 
+    const [typelist, setTypeList] = useState<boolean>(false)
+
 
     return (
         <>
@@ -40,11 +42,19 @@ const Libs = () => {
                 <SearchBar setToast={setToast} />
                 {userGames && <>
                     <h3 className='gamesList__title'>Meus jogos - {(userGames.length)}</h3>
+                    <div className="categoryList__groupBtn-slider libs__groupBtn">
+                        <button title='Mostrar em card' onClick={() => setTypeList(false)}><i className="fa-solid fa-qrcode"></i></button>
+                        <button title='Mostrar em lista' onClick={() => setTypeList(true)}><i className="fa-solid fa-list-ul"></i></button>
+                    </div>
                     <ul className='libs__list'>
                         {games && userGames && games.length > 0 && userGames.length > 0 && games.map(element => {
                             const findGame = userGames.find(e => e.game_id === element.id)
                             if (!findGame) return
-                            return <GameCard key={element.id} game={element} isLib={findGame.create_at} />
+                            return <>
+                                {typelist && <GameCard key={element.id} game={element} isLib={findGame.create_at} isList={true} />}
+                                {!typelist && <GameCard key={element.id} game={element} isLib={findGame.create_at} />}
+
+                            </>
                         })}
                     </ul>
                 </>}

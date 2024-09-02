@@ -13,6 +13,7 @@ import getUserGames from '../../api/getUserGames'
 import { UserGamesApi } from '../../interfaces/userGames'
 import Modal from '../../components/Modal/Modal'
 import Loading from '../../components/Loading/Loading'
+import insertStore from '../../api/insertStore'
 
 const Game = () => {
 
@@ -77,6 +78,17 @@ const Game = () => {
         }
     }
 
+    const storeGame = async () => {
+        try {
+            if (!game?.id) throw new Error("Jogo nao encontrado.");
+            const response = await insertStore(game?.id)
+            setToast({ text: response.message, type: 'success' })
+        } catch (error: any) {
+            console.log(error)
+            setToast({ text: error.message, type: 'error' })
+        }
+    }
+
     return (
         <>
             <SideBar />
@@ -112,7 +124,7 @@ const Game = () => {
                                     </span>
                                     <span style={{ color: 'yellow' }}> R${Math.ceil((Number(game.price)) - calculateDiscount(Number(game.price), game?.promo)).toFixed(2)}</span>
                                 </button>}
-                            <button ><i className="fa-solid fa-bag-shopping"></i></button>
+                            <button onClick={storeGame} ><i className="fa-solid fa-bag-shopping"></i></button>
                         </>}
                     </div>
 

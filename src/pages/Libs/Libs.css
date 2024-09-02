@@ -5,6 +5,14 @@
     flex-direction: column;
 }
 
+.libs__groupBtn {
+    margin: 0 0 30px;
+}
+
+.libs__groupBtn i {
+    font-size: 24px;
+}
+
 .libs__list {
     margin: 0 0 100px;
     display: flex;
@@ -19,5 +27,9 @@
     }
     .libs__list {
         justify-content: space-around;
+    }
+
+    .libs__groupBtn {
+        margin-left: auto ;
     }
 }

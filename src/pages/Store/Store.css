@@ -1,0 +1,13 @@
+.store {
+    min-height: 100dvh;
+    padding: 2rem 5% 0 calc(280px + 5%);
+    display: flex;
+    flex-direction: column;
+}
+
+/* MB <= 767 - TB <= 1023 - */
+@media screen and (max-width: 767px) {
+    .store {
+        padding: 0 5%;
+    }
+}
