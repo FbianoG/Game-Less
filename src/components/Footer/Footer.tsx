@@ -17,7 +17,7 @@ const Footer = () => {
 
             </nav>
             <nav >
-                <a href='' target='_blank'>Support</a>
+                <a href='' target='_blank'>Suporte</a>
                 <a href='' target='_blank'>Serviços</a>
                 <a href='' target='_blank'>Termos</a>
 
@@ -26,10 +26,10 @@ const Footer = () => {
             <div className="footer__social">
                 <h3>Social Media</h3>
                 <nav>
-                    <a href='https://www.linkedin.com/in/fbianog/' target='_blank'><i className="fa-brands fa-linkedin-in"></i></a>
-                    <a href='https://www.instagram.com/fbiano.1/' target='_blank'><i className="fa-brands fa-instagram"></i></a>
-                    <a href='https://github.com/FbianoG' target='_blank'><i className="fa-brands fa-github"></i></a>
-                    <a href='https://fgportfolio.vercel.app/' target='_blank'><i className="fa-solid fa-globe"></i></a>
+                    <a href='https://www.linkedin.com/in/fbianog/' target='_blank' title='Linkedin'><i className="fa-brands fa-linkedin-in"></i></a>
+                    <a href='https://www.instagram.com/fbiano.1/' target='_blank' title='Intagram'><i className="fa-brands fa-instagram"></i></a>
+                    <a href='https://github.com/FbianoG' target='_blank' title='GitHub'><i className="fa-brands fa-github"></i></a>
+                    <a href='https://fgportfolio.vercel.app/' target='_blank' title='Portfólio'><i className="fa-solid fa-globe"></i></a>
 
                 </nav>
             </div>

@@ -18,8 +18,8 @@ const GameCard: React.FC<GameCardProps> = ({ game, isLib }) => {
             <div className="game__card-data">
                 <p title={game.name}>{game.name}</p>
                 {isLib && <span>Compra em: {date?.toLocaleString().split(',')[0]}</span>}
-                {!isLib && <><span className={`${game.promo > 0 && 'priceCut'}`}>R${game.price}</span>
-                    {game.promo > 0 && <h5>R${Math.ceil(Number(game.price) - calculateDiscount(Number(game.price), game.promo)).toFixed(2)}</h5>}</>}
+                {!isLib && <><span className={`game__card__data-priceCut ${game.promo > 0 && 'priceCut'}`}>R${game.price}</span>
+                    {game.promo > 0 && <span className='game__card__data-price'>R${Math.ceil(Number(game.price) - calculateDiscount(Number(game.price), game.promo)).toFixed(2)}</span>}</>}
             </div>
         </div>
     )

@@ -23,17 +23,17 @@ const CategoryList: React.FC<CategoryListProps> = ({ title, games }) => {
             <div className="categoryList__header">
                 <h3 className='categoryList__title'>{title}</h3>
                 <div className="categoryList__groupBtn-slider">
-                    <button onClick={prevPage}><i className="fa-solid fa-chevron-left"></i></button>
-                    <button onClick={nextPage}><i className="fa-solid fa-chevron-right"></i></button>
+                    <button title='Voltar jogos' onClick={prevPage}><i className="fa-solid fa-chevron-left"></i></button>
+                    <button title='Passar jogos' onClick={nextPage}><i className="fa-solid fa-chevron-right"></i></button>
                 </div>
 
             </div>
 
-            <ul className="categoryList__list" ref={list}>
+            <div className="categoryList__list" ref={list}>
 
                 {games.map(element => <GameCard key={element.id} game={element} />)}
 
-            </ul>
+            </div>
 
         </div>
     )

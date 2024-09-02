@@ -41,20 +41,21 @@
     font-weight: 500;
 }
 
-.game__card-data span {
+.game__card__data-priceCut {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    color: #999;
+    color: #aaa;
     font-size: 14px;
 }
 
 .game__card-data .priceCut {
     text-decoration: line-through;
-    color: #555;
+    color: #aaa;
 }
 
-.game__card-data h5 {
+.game__card__data-price {
+    display: block;
     color: #5ab45a;
     font-weight: normal;
     font-size: 16px;
