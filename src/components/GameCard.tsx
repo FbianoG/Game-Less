@@ -11,7 +11,7 @@ interface GameCardProps {
 }
 
 
-const GameCard: React.FC<GameCardProps> = ({ game, isLib, isList, store }) => {
+const GameCard: React.FC<GameCardProps> = ({ game, isLib, isList }) => {
     let date
     if (isLib) date = new Date(isLib)
 
