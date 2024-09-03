@@ -25,7 +25,6 @@ const Store = () => {
             const [gamesStore, allGames] = await Promise.all([getUserStore(), getGames()])
             setUserStore(gamesStore)
             setGames(allGames)
-            console.log(gamesStore)
         } catch (error: any) {
             setToast({ text: error.message, type: 'error' })
         }

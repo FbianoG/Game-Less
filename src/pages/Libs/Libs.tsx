@@ -46,15 +46,13 @@ const Libs = () => {
                         <button title='Mostrar em card' onClick={() => setTypeList(false)}><i className="fa-solid fa-qrcode"></i></button>
                         <button title='Mostrar em lista' onClick={() => setTypeList(true)}><i className="fa-solid fa-list-ul"></i></button>
                     </div>
-                    <ul className='libs__list'>
+                    <ul className='libs__list' key={'1'}>
                         {games && userGames && games.length > 0 && userGames.length > 0 && games.map(element => {
                             const findGame = userGames.find(e => e.game_id === element.id)
                             if (!findGame) return
-                            return <>
-                                {typelist && <GameCard key={element.id} game={element} isLib={findGame.create_at} isList={true} />}
-                                {!typelist && <GameCard key={element.id} game={element} isLib={findGame.create_at} />}
+                            else if (typelist) return <GameCard key={element.id} game={element} isLib={findGame.create_at} isList={true} />
+                            else if (!typelist) return <GameCard key={element.id} game={element} isLib={findGame.create_at} />
 
-                            </>
                         })}
                     </ul>
                 </>}

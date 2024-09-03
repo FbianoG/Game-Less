@@ -1,4 +1,6 @@
 // import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+import deleteStore from '../../api/deleteStore'
 import { GamesApi } from '../../interfaces/games'
 import calculateDiscount from '../../utils/calculateDiscount'
 import './GameCard.css'
@@ -16,6 +18,8 @@ const GameCard: React.FC<GameCardProps> = ({ game, isLib, isList, store }) => {
     let date
     if (isLib) date = new Date(isLib)
 
+    const navigate = useNavigate()
+
     const handleClickGame = (event: any) => {
         if (event.target.tagName === 'BUTTON' || event.target.tagName === 'I') return
         location.href = `/game?id=${game.id}`
@@ -23,9 +27,11 @@ const GameCard: React.FC<GameCardProps> = ({ game, isLib, isList, store }) => {
 
     const handleDeleteGame = async () => {
         try {
-            return
-            // const response = await axios.post(`${UrlApi}/deleteUserStore`, { gameId: game.id })
+
+            const response = await deleteStore(game.id)
+            location.reload()
         } catch (error) {
+            console.log(error)
         }
     }
 
@@ -36,8 +42,10 @@ const GameCard: React.FC<GameCardProps> = ({ game, isLib, isList, store }) => {
                 <div className="game__card-data">
                     <p title={game.name}>{game.name}</p>
                     {isLib && <span className='game__card__data-priceCut'>Compra em: {date?.toLocaleString().split(',')[0]}</span>}
-                    {!isLib && <><span className={`game__card__data - priceCut ${game.promo > 0 && 'priceCut'} `}>R${game.price}</span>
-                        {game.promo > 0 && <span className='game__card__data-price'>R${Math.ceil(Number(game.price) - calculateDiscount(Number(game.price), game.promo)).toFixed(2)}</span>}</>}
+                    {!isLib && <>
+                        <span className={`game__card__data - priceCut ${game.promo > 0 && 'priceCut'} `}>R${game.price}</span>
+                        {game.promo > 0 && <span className='game__card__data-price'>R${Math.ceil(Number(game.price) - calculateDiscount(Number(game.price), game.promo)).toFixed(2)}</span>}
+                    </>}
                 </div>
             </div>}
 

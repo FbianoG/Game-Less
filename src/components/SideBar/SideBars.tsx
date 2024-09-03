@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import Modal from '../Modal/Modal'
 import './SideBar.css'
+import { Link } from 'react-router-dom'
 
 const SideBar = () => {
 
@@ -48,9 +49,9 @@ const SideBar = () => {
             </div>}
 
             <nav className="sideBar__list">
-                <a href='/'><i className="fa-solid fa-gamepad"></i>Game Less</a>
-                <a href='/libs'><i className="fa-solid fa-hard-drive"></i>Biblioteca</a>
-                <a href='/store'><i className="fa-solid fa-bag-shopping"></i>Carrinho</a>
+                <Link to='/'><i className="fa-solid fa-gamepad"></i>Game Less</Link>
+                <Link to='/libs'><i className="fa-solid fa-hard-drive"></i>Biblioteca</Link>
+                <Link to='/store'><i className="fa-solid fa-bag-shopping"></i>Carrinho</Link>
             </nav>
 
             {user && <button className='sideBar__btn-logout' onClick={logout}>Logout<i className="fa-solid fa-right-from-bracket"></i></button>}
