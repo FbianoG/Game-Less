@@ -1,10 +1,7 @@
-// import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import './GameCard.css'
 import deleteStore from '../../api/deleteStore'
 import { GamesApi } from '../../interfaces/games'
 import calculateDiscount from '../../utils/calculateDiscount'
-import './GameCard.css'
-// import UrlApi from '../../api/UrlApi'
 
 interface GameCardProps {
     game: GamesApi
@@ -18,8 +15,6 @@ const GameCard: React.FC<GameCardProps> = ({ game, isLib, isList, store }) => {
     let date
     if (isLib) date = new Date(isLib)
 
-    const navigate = useNavigate()
-
     const handleClickGame = (event: any) => {
         if (event.target.tagName === 'BUTTON' || event.target.tagName === 'I') return
         location.href = `/game?id=${game.id}`
@@ -27,8 +22,7 @@ const GameCard: React.FC<GameCardProps> = ({ game, isLib, isList, store }) => {
 
     const handleDeleteGame = async () => {
         try {
-
-            const response = await deleteStore(game.id)
+            await deleteStore(game.id)
             location.reload()
         } catch (error) {
             console.log(error)
