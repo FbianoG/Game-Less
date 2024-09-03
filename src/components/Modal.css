@@ -1,0 +1,9 @@
+#modal {
+    animation: showModal .5s ease both;
+}
+
+@keyframes showModal {
+    100% {
+        opacity: 1;
+    }
+}

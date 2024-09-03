@@ -5,12 +5,12 @@ import getUserGames from '../../api/getUserGames'
 import { UserGamesApi } from '../../interfaces/userGames'
 import getGames from '../../api/getGames'
 import { GamesApi } from '../../interfaces/games'
-import GameCard from '../../components/GameCard/GameCard'
-import SideBar from '../../components/SideBar/SideBars'
+import GameCard from '../../components/GameCard'
+import SideBar from '../../components/SideBars'
 import Footer from '../../components/Footer/Footer'
-import SearchBar from '../../components/SearchBar/SearchBar'
+import SearchBar from '../../components/SearchBar'
 import Toast from '../../components/Toast/Toast'
-import Loading from '../../components/Loading/Loading'
+import Loading from '../../components/Loading'
 
 const Libs = () => {
 
@@ -42,9 +42,9 @@ const Libs = () => {
                 <SearchBar setToast={setToast} />
                 {userGames && <>
                     <h3 className='gamesList__title'>Meus jogos - {(userGames.length)}</h3>
-                    <div className="categoryList__groupBtn-slider libs__groupBtn">
-                        <button title='Mostrar em card' onClick={() => setTypeList(false)}><i className="fa-solid fa-qrcode"></i></button>
-                        <button title='Mostrar em lista' onClick={() => setTypeList(true)}><i className="fa-solid fa-list-ul"></i></button>
+                    <div className=" mb-8 max-md:ml-auto flex gap-2 text-xl">
+                        <button className='py-2 px-3 bg-neutral-800 text-neutral-100 rounded-lg duration-300 hover:bg-neutral-600' title='Mostrar em card' onClick={() => setTypeList(false)}><i className="fa-solid fa-qrcode"></i></button>
+                        <button className='py-2 px-3 bg-neutral-800 text-neutral-100 rounded-lg duration-300 hover:bg-neutral-600' title='Mostrar em lista' onClick={() => setTypeList(true)}><i className="fa-solid fa-list-ul"></i></button>
                     </div>
                     <ul className='libs__list' key={'1'}>
                         {games && userGames && games.length > 0 && userGames.length > 0 && games.map(element => {

@@ -1,0 +1,5 @@
+.game__card {
+    &:hover img {
+        filter: brightness(.7);
+    }
+}

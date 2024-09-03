@@ -1,5 +1,5 @@
 import { GamesApi } from '../../interfaces/games'
-import GameCard from '../GameCard/GameCard'
+import GameCard from '../GameCard'
 import './GamesList.css'
 
 

@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react'
-import SideBar from '../../components/SideBar/SideBars'
+import SideBar from '../../components/SideBars'
 import './Store.css'
 import { UserGamesApi } from '../../interfaces/userGames'
 import { GamesApi } from '../../interfaces/games'
 import getUserStore from '../../api/getUserStore'
 import getGames from '../../api/getGames'
-import GameCard from '../../components/GameCard/GameCard'
+import GameCard from '../../components/GameCard'
 import Footer from '../../components/Footer/Footer'
-import SearchBar from '../../components/SearchBar/SearchBar'
+import SearchBar from '../../components/SearchBar'
 import Toast from '../../components/Toast/Toast'
 
 const Store = () => {

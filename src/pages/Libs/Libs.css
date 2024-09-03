@@ -18,7 +18,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
-}
+            }
 
 /* MB <= 767 - TB <= 1023 - */
 @media screen and (max-width: 767px) {
