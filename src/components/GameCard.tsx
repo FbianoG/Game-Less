@@ -12,8 +12,6 @@ interface GameCardProps {
 
 
 const GameCard: React.FC<GameCardProps> = ({ game, isLib, isList }) => {
-    let date
-    if (isLib) date = new Date(isLib)
 
     const handleClickGame = (event: any) => {
         if (event.target.tagName === 'BUTTON' || event.target.tagName === 'I') return
