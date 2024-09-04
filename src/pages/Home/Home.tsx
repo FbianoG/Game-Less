@@ -31,10 +31,28 @@ const Home = () => {
         <>
             <SideBar />
 
-            <div className=' max-md:px-5 min-h-dvh pl-80 p-9 flex flex-col' >
+            <div className='px-8 max-md:px-5 min-h-dvh pl-80 relative p flex flex-col bg-gradient-to-b from-neutral-950 to-transparent' >
+
+                <video className='w-full h-dvh  absolute left-0 top-0 object-cover blur-sm -z-50 ' src="game.mp4" autoPlay loop muted playsInline> fala aew</video>
+
+                <div className=" py-40 max-md:py-20 mb- relative flex flex-col gap-8 items-center border-neutral-700">
+                    <h3 className=' max-w-[450px] object-cover text-5xl text-neutral-100 text-center'>Faça parte desse universo <span className='text-green-600 font-semibold'>Game Less</span><span className='bg-green-600 w-2 h-2 inline-block rounded-full ' >
+                        <span className='w-full h-full block bg-green-400 animate-ping rounded-full'></span></span></h3>
+
+                    <p className='text-neutral-300 text-center text-lg'>Somos focados em lhe proporcionar entretenimento e diversão no mais alto nível.</p>
+
+                    <form className="flex flex-col md:flex-row border border-neutral-700 rounded-lg">
+                        <input type="email" placeholder="Escreva seu E-mail" className="flex-1 h-10 px-4 py-2 m-1 text-neutral-100 placeholder-gray-400 bg-transparent border-none appearance-none  outline-none focus:placeholder-transparent " />
+
+                        <button type="button" className="h-10 px-4 py-2 m-1 text-white transition-colors duration-300 transform bg-green-500 rounded-md hover:bg-green-400 outline-none">
+                            Fale Conosco
+                        </button>
+                    </form>
+                </div>
+
                 <SearchBar setToast={setToast} />
 
-                <div className=" mb-10 flex gap-4 justify-center flex-wrap">
+                <div className=" mb-10 flex gap-4 justify-center flex-wrap" onClick={() => document.querySelectorAll('.search')[0].scrollIntoView({ behavior: 'smooth' })}>
                     <button className={style.btn} style={style.sbtn} onClick={() => setGamesFiltered(undefined)}><i className="fa-solid fa-house"></i>Início</button>
                     <button className={style.btn} style={style.sbtn} onClick={() => setGamesFiltered('guerra')}><i className="fa-solid fa-gun"></i>Ação</button>
                     <button className={style.btn} style={style.sbtn} onClick={() => setGamesFiltered('simulação')}><i className="fa-solid fa-vr-cardboard"></i>Simulação</button>
@@ -43,23 +61,6 @@ const Home = () => {
                     <button className={style.btn} style={style.sbtn} onClick={() => setGamesFiltered('esporte')}><i className="fa-solid fa-volleyball"></i>Esportes</button>
                     <button className={style.btn} style={style.sbtn} onClick={() => setGamesFiltered('indie')}><i className="fa-solid fa-align-right"></i>Indie</button>
                 </div>
-
-                {!gamesFiltered &&
-                    <div className=" py-20 mb-10 relative flex flex-col gap-8 items-center border-b border-neutral-700">
-                        <h3 className=' max-w-[450px] text-5xl text-neutral-100 text-center'>Faça parte desse universo Game Less<span className='bg-green-600 w-2 h-2 inline-block rounded-full ' >
-                            <span className='w-full h-full block bg-green-400 animate-ping rounded-full'></span></span></h3>
-
-                        <p className='text-neutral-300 text-center text-lg'>Somos focados em lhe proporcionar entretenimento e diversão no mais alto nível.</p>
-
-                        <form className="flex flex-col md:flex-row border border-neutral-700 rounded-lg">
-                            <input type="email" placeholder="Escreva seu E-mail" className="flex-1 h-10 px-4 py-2 m-1 text-neutral-100 placeholder-gray-400 bg-transparent border-none appearance-none  outline-none focus:placeholder-transparent " />
-
-                            <button type="button" className="h-10 px-4 py-2 m-1 text-white transition-colors duration-300 transform bg-green-500 rounded-md hover:bg-green-400 outline-none">
-                                Fale Conosco
-                            </button>
-                        </form>
-                    </div>
-                }
 
                 {games && games.length > 0 &&
                     <>

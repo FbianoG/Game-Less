@@ -1,4 +1,4 @@
-import {useState } from 'react';
+import { useState } from 'react';
 import { GamesApi } from '../interfaces/games';
 import searchGames from '../api/searchGames';
 
@@ -33,7 +33,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ setToast }) => {
     }
 
     return (
-        <div className="w-6/12 min-w-80 p-2 mx-auto mb-8  relative flex gap-3 items-center text-neutral-100 bg-neutral-900 rounded-lg">
+        <div className="search w-6/12 min-w-80 p-2 max-md:mt-8 mx-auto mb-16  relative flex gap-3 items-center text-neutral-100 bg-neutral-900 rounded-lg">
             <i className="fa-solid fa-magnifying-glass"></i>
 
             <input className='flex-1 bg-transparent outline-none' onChange={(e) => handleSearch(e.target.value)} type='text' placeholder='Pesquisar jogo' />

@@ -131,17 +131,18 @@ const Modal: React.FC<ModalProps> = ({ onClick, setUser, type, game }) => {
                         </>
                     }
 
+
                     {type === 'checkout' && game &&
                         <>
                             <h4 className='mt-3 text-xl font-medium text-center text-gray-600'>Conclua Sua Compra</h4>
 
-                            <div className=" py-4 flex items-center gap-4 text-neutral-700 border-b border-neutral-300">
-                                <input type="checkbox" id='check' />
-                                <label htmlFor='check'>Estou ciente dos "Termos & Condições" antes de efetuar esta compra. </label>
+                            <div className=" py-4 mb-4 flex items-center gap-4 text-neutral-700 border-b border-neutral-300 peer ">
+                                <input className='w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:green-blue-500  focus:ring-2 ' type="checkbox" id='check' />
+                                <label htmlFor='check'>Estou ciente dos <span className='text-green-600 cursor-pointer hover:opacity-70'>"Termos & Condições"</span> antes de efetuar esta compra. </label>
                             </div>
 
                             <div className="w-full flex gap-2 text-neutral-800 font-medium">
-                                <img className='w-16 shadow-xl' src={game.poster} alt='' />
+                                <img className='w-16 shadow-md shadow-neutral-400' src={game.poster} alt='' />
                                 <p>{game.name}</p>
                                 <p className='w-max ml-auto text-nowrap'>R$ {game.price}</p>
                             </div>
@@ -152,7 +153,8 @@ const Modal: React.FC<ModalProps> = ({ onClick, setUser, type, game }) => {
                                 <h5 className=' font-medium text-xl text-green-600'>Total: R$ {(Number(game.price) - calculateDiscount(Number(game.price), game.promo)).toFixed(2)}</h5>
                             </div>
 
-                            <button className={style.btnMain} onClick={setUser} >Comprar</button>
+                            <button className={`${style.btnMain} hidden peer-has-[:checked]:block`} onClick={setUser} >Comprar</button>
+                            <button className={`${style.btnMain} opacity-70  peer-has-[:checked]:hidden`} disabled >Aceite os termos</button>
                         </>
                     }
 

@@ -33,7 +33,7 @@ const Store = () => {
     return (
         <>
             <SideBar />
-            <div className='store'>
+            <div className='store bg-gradient-to-b from-neutral-950 to-transparent'>
                 <SearchBar setToast={setToast} />
                 {userStore && <>
                     <h3 className='gamesList__title'>Jogos desejados - {(userStore.length)}</h3>

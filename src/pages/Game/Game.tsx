@@ -15,6 +15,9 @@ import Modal from '../../components/Modal'
 import Loading from '../../components/Loading'
 import insertStore from '../../api/insertStore'
 
+import { AiOutlineAppstore } from "react-icons/ai";
+
+
 const Game = () => {
 
     const [game, setGame] = useState<GamesApi>() // jogo selecionado
@@ -92,23 +95,29 @@ const Game = () => {
     return (
         <>
             <SideBar />
-            <div className='game'>
+            <div className='game bg-gradient-to-b from-neutral-950 to-transparent'>
 
-                {game && <>
+                {game && 
+                <>
                     <div className="content">
                         <div className="content__data">
                             <h2 className='content__title'>{game.name}</h2>
+
                             <div className="content__discount">
                                 <i className="fa-solid fa-tag"></i>
-                                {game.promo > 0 ? <span>{game.promo}% de desconto</span> : <span>Preço original</span>}
+
+                                {game.promo > 0 ? 
+                                <span>{game.promo}% de desconto</span> 
+                                : 
+                                <span>Preço original</span>}
                             </div>
+
                             <div className="content__description">{game.description}</div>
                         </div>
                         <div className="poster">
                             <img src={game.poster} alt={game.name} />
                         </div>
                     </div>
-
 
                     <div className="groupBtn">
                         <button style={{ background: '#358b34' }}>Instalar</button>

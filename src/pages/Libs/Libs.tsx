@@ -12,6 +12,9 @@ import SearchBar from '../../components/SearchBar'
 import Toast from '../../components/Toast/Toast'
 import Loading from '../../components/Loading'
 
+import { AiOutlineAppstore, AiOutlineUnorderedList } from 'react-icons/ai'
+
+
 const Libs = () => {
 
     useEffect(() => { loadUserGames() }, [])
@@ -38,14 +41,21 @@ const Libs = () => {
     return (
         <>
             <SideBar />
-            <div className='libs'>
+            <div className='libs bg-gradient-to-b from-neutral-950 to-transparent'>
                 <SearchBar setToast={setToast} />
                 {userGames && <>
                     <h3 className='gamesList__title'>Meus jogos - {(userGames.length)}</h3>
-                    <div className=" mb-8 max-md:ml-auto flex gap-2 text-xl">
-                        <button className='py-2 px-3 bg-neutral-800 text-neutral-100 rounded-lg duration-300 hover:bg-neutral-600' title='Mostrar em card' onClick={() => setTypeList(false)}><i className="fa-solid fa-qrcode"></i></button>
-                        <button className='py-2 px-3 bg-neutral-800 text-neutral-100 rounded-lg duration-300 hover:bg-neutral-600' title='Mostrar em lista' onClick={() => setTypeList(true)}><i className="fa-solid fa-list-ul"></i></button>
+
+                    <div className=" mb-8 max-md:ml-auto flex gap-2 text-2xl text-neutral-100 duration-300">
+                        <button className='py-2 px-3 bg-neutral-800  rounded-lg duration-300 hover:bg-neutral-600' title='Mostrar em card' onClick={() => setTypeList(false)}>
+                            <AiOutlineAppstore />
+                        </button>
+
+                        <button className='py-2 px-3 bg-neutral-800  rounded-lg duration-300 hover:bg-neutral-600' title='Mostrar em lista' onClick={() => setTypeList(true)}>
+                            <AiOutlineUnorderedList />
+                        </button>
                     </div>
+
                     <ul className='libs__list' key={'1'}>
                         {games && userGames && games.length > 0 && userGames.length > 0 && games.map(element => {
                             const findGame = userGames.find(e => e.game_id === element.id)
