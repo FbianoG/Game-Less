@@ -15,9 +15,6 @@ import Modal from '../../components/Modal'
 import Loading from '../../components/Loading'
 import insertStore from '../../api/insertStore'
 
-import { AiOutlineAppstore } from "react-icons/ai";
-
-
 const Game = () => {
 
     const [game, setGame] = useState<GamesApi>() // jogo selecionado
