@@ -79,9 +79,11 @@ const SideBar = () => {
 
             {showModal && <Modal type='login' onClick={setShowModal} setUser={setUser} />}
 
-            {!ShowSideBar && <div className="w-6 h-20 fixed left-0 top-1/2 -translate-y-1/2 rounded-r-xl bg-neutral-50 place-items-center hidden max-md:grid " title='Mostrar menu' onClick={handleShowSideBar}>
-                <i className="fa-solid fa-chevron-right"></i>
-            </div>}
+            {!ShowSideBar &&
+                <div className="w-6 h-20 fixed left-0 top-1/2 -translate-y-1/2 rounded-r-xl bg-neutral-50 place-items-center hidden max-md:grid " title='Mostrar menu' onClick={handleShowSideBar}>
+                    <i className="fa-solid fa-chevron-right"></i>
+                </div>
+            }
 
             {ShowSideBar && <div className='w-dvw h-dvh fixed left-0 top-0 bg-opacity-50 bg-black -z-10' onClick={handleShowSideBar}></div>}
         </div>
