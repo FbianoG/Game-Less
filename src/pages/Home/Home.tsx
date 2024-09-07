@@ -31,7 +31,7 @@ const Home = () => {
         <>
             <SideBar />
 
-            <div className='px-8 max-md:px-5 min-h-dvh pl-80 relative p flex flex-col bg-gradient-to-b from-neutral-950 to-transparent' >
+            <div className='px-8 max-md:px-5 min-h-dvh pl-80 relative p flex flex-col bg-gradient-to-b from-[#000b] to-transparent' >
 
                 <video className='w-full h-dvh  absolute left-0 top-0 object-cover blur-sm -z-50 ' src="game.mp4" autoPlay loop muted playsInline> fala aew</video>
 

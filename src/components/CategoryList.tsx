@@ -28,7 +28,7 @@ const CategoryList: React.FC<CategoryListProps> = ({ title, games }) => {
                 </div>
             </div>
 
-            <div className="flex gap-5 overflow-hidden" ref={list}>
+            <div className=" pb-3 flex gap-5 overflow-auto lg:overflow-hidden" ref={list}>
                 {games.map(element => <GameCard key={element.id} game={element} />)}
             </div>
         </div>

@@ -1,4 +1,3 @@
-import './GameCard.css'
 import deleteStore from '../api/deleteStore'
 import { GamesApi } from '../interfaces/games'
 import calculateDiscount from '../utils/calculateDiscount'
@@ -32,22 +31,14 @@ const GameCard: React.FC<GameCardProps> = ({ game, isLib, isList }) => {
     return (
         <>
             {!isList &&
-                <div className=" bg-neutral-900 w-52 flex-shrink-0 flex-col flex rounded-lg cursor-pointer group overflow-hidden" onClick={handleClickGame}>
-                    <div className="flex p-2 gap-1">
-                        <div className="">
-                            <span className="bg-lime-500 inline-block center w-3 h-3 rounded-full"></span>
-                        </div>
+                <div className=" bg-neutral-900 w-52 flex-shrink-0 border border-[#222] flex-col flex rounded-lg cursor-pointer group overflow-hidden" onClick={handleClickGame}>
 
-                        <div className="circle">
-                            <span className="bg-green-500 inline-block center w-3 h-3 rounded-full"></span>
-                        </div>
+                    <div className="rounded-t-lg w-full h-64 group-hover:brightness-75 duration-300 overflow-hidden">
+                        <img className='  object-cover w-full h-full group-hover:scale-105 duration-500' src={game.poster} alt={game.name} />
 
-                        <div className="circle">
-                            <span className="bg-blue-400 box inline-block center w-3 h-3 rounded-full"></span>
-                        </div>
                     </div>
 
-                    <img className=' rounded-t-lg w-full object-cover h-64 duration-300 group-hover:brightness-75' src={game.poster} alt={game.name} />
+
 
                     <div className=" flex flex-col p-2 flex-1 group-hover:bg-neutral-800 duration-300">
                         <h3 className=' text-neutral-100 w-full text-nowrap text-ellipsis overflow-hidden'>{game.name}</h3>

@@ -8,14 +8,14 @@ interface ToastProps {
 const Toast: React.FC<ToastProps> = ({ text, onClick }) => {
 
     return (<>
-        {text.type === 'error' && <div className='toast'>
+        {text.type === 'error' && <div className='toast z-50'>
             <i className="fa-solid fa-triangle-exclamation"></i>
             {text.text}
             <button onClick={() => onClick(false)}><i className="fa-regular fa-circle-xmark"></i></button>
         </div>
 
         }
-        {text.type === 'success' && <div className='toast success'>
+        {text.type === 'success' && <div className='toast success z-50'>
             <i className="fa-solid fa-check"></i>
             {text.text}
             <button onClick={() => onClick(false)}><i className="fa-regular fa-circle-xmark"></i></button>

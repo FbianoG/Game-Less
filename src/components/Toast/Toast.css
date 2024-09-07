@@ -15,7 +15,6 @@
     font-weight: 500;
     box-shadow: 3px 3px 5px #0003;
     animation: showToast .5s ease both;
-    z-index: 10;
 }
 
 .toast.success {

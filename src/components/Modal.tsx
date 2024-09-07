@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { createUser, login } from '../api/user'
 import { useForm, SubmitHandler } from "react-hook-form";
 import { GamesApi } from '../interfaces/games';
-import calculateDiscount from '../utils/calculateDiscount';
+import Cashout from './Cashout';
 
 interface ModalProps {
     onClick: (a: boolean) => void
@@ -21,7 +21,6 @@ interface InputForm {
 
 
 const Modal: React.FC<ModalProps> = ({ onClick, setUser, type, game }) => {
-
 
     const { register, handleSubmit, reset } = useForm<InputForm>();
 
@@ -55,19 +54,9 @@ const Modal: React.FC<ModalProps> = ({ onClick, setUser, type, game }) => {
         }
     }
 
-    const style = {
-        title: 'text-neutral-800 text-3xl font-medium ',
-        form: 'flex flex-col items-center',
-        input: 'p-1 mb-3 border border-neutral-300 rounded bg-transparent outline-none focus:border-green-600',
-        label: 'text-neutral-700',
-        btnMain: 'w-full p-3 bg-green-600 text-neutral-100 font-semibold  rounded hover:brightness-110',
-        btnLink: 'mt-auto text-green-600 duration-300 hover:opacity-60 ',
-        alert: 'text-red-500 mb-3',
-    }
-
     return (
         <>
-            <div className="bg-neutral-900 bg-opacity-50 fixed left-0 top-0 grid place-items-center w-dvw h-dvh rounded-lg">
+            <div className="bg-neutral-900 bg-opacity-50 fixed left-0 top-0 grid place-items-center w-dvw h-dvh rounded-lg z-40">
                 <div className="w-96 max-md:w-11/12 px-6 py-4 relative rounded-lg shadow-xl bg-neutral-100 ">
                     <div className="flex justify-center mx-auto">
                         <img className="w-auto h-7 sm:h-8" src="../../../public/logoTitle.png" alt="" />
@@ -75,88 +64,57 @@ const Modal: React.FC<ModalProps> = ({ onClick, setUser, type, game }) => {
 
                     {type === 'login' &&
                         <>
-                            {!create &&
+                            {!create ?
                                 <>
-                                    <h3 className="mt-3 text-xl font-medium text-center text-gray-600 ">Bem Vindo</h3>
-
+                                    <h4 className="mt-3 text-xl font-medium text-center text-gray-600 ">Bem Vindo</h4>
                                     <p className="mt-1 text-center text-gray-500 ">Acesse ou crie sua conta</p>
                                 </>
-                            }
-                            {create &&
+                                :
                                 <>
-                                    <h3 className="mt-3 text-xl font-medium text-center text-gray-600 ">Criar Conta</h3>
-
+                                    <h4 className="mt-3 text-xl font-medium text-center text-gray-600 ">Criar Conta</h4>
                                     <p className="mt-1 text-center text-gray-500 ">Preencha o formúlario</p>
                                 </>
+
                             }
 
                             <form onSubmit={!create ? handleSubmit(handleLogin) : handleSubmit(handleCreateUser)}>
-                                <input className="block w-full px-4 py-2 mt-4  text-gray-700 placeholder-gray-500 bg-white border rounded-lg focus:border-green-400 focus:ring-opacity-40 outline-none focus:ring focus:ring-green-300" type="text" placeholder="Login" aria-label="Seu login" {...register('login', { required: true })} />
 
-                                <input className="block w-full px-4 py-2 mt-4 text-gray-700 placeholder-gray-500 bg-white border rounded-lg focus:border-green-400 focus:ring-opacity-40 outline-none focus:ring focus:ring-green-300" type="password" placeholder="Senha" aria-label="Sua senha"  {...register('password', { required: true })} />
+                                <input className="inputForm" type="text" placeholder="Login" aria-label="Seu login" {...register('login', { required: true })} />
 
-                                {create &&
-                                    <input className="block w-full px-4 py-2 mt-4 text-gray-700 placeholder-gray-500 bg-white border rounded-lg focus:border-green-400 focus:ring-opacity-40 outline-none focus:ring focus:ring-green-300" type="password" placeholder="Repita a Senha" aria-label="Sua senha"  {...register('rpassword', { required: true })} />
-                                }
+                                <input className="inputForm" type="password" placeholder="Senha" aria-label="Sua senha"  {...register('password', { required: true })} />
+
+                                {create && <input className="inputForm" type="password" placeholder="Repita a Senha" aria-label="Sua senha"  {...register('rpassword', { required: true })} />}
 
                                 <span className=' mt-4 text-red-500 text-center block'>{textAlert}</span>
 
                                 <div className="flex items-center justify-between mt-4">
 
-                                    {!create &&
-                                        <a href="#" className="text-sm text-gray-600  hover:text-gray-500">Esqueceu a senha?</a>
-                                    }
+                                    {!create && <a href="#" className="text-sm text-gray-600  hover:text-gray-500">Esqueceu a senha?</a>}
 
-                                    <button className="px-6 py-2 text-sm ml-auto font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-green-600 rounded-lg hover:bg-green-500 outline-none focus:ring focus:ring-green-300 focus:ring-opacity-50 shadow-md">
+                                    <button className="btnForm ml-auto">
                                         {create && 'Criar Conta'}
-
                                         {!create && 'Entrar'}
                                     </button>
+
                                 </div>
                             </form>
 
                             <div className=" mt-8 flex items-center justify-center py-4 text-center">
-                                {!create && <>
-                                    <span className="text-sm text-gray-600">Não tem uma conta? </span>
-
-                                    <a className="mx-2 text-sm font-bold text-green-500 cursor-pointer hover:underline" onClick={() => { setCreate(true), reset() }}>Registre-se</a>
-                                </>
-                                }
-
-                                {create && <>
-                                    <a className="mx-2 text-sm font-bold text-green-500 cursor-pointer hover:underline" onClick={() => { setCreate(false), reset() }}>Cancelar</a>
-                                </>
+                                {!create ?
+                                    <>
+                                        <span className="text-sm text-gray-600">Não tem uma conta? </span>
+                                        <a className="mx-2 text-sm font-bold text-green-500 cursor-pointer hover:underline" onClick={() => { setCreate(true), reset() }}>Registre-se</a>
+                                    </>
+                                    :
+                                    <>
+                                        <a className="mx-2 text-sm font-bold text-green-500 cursor-pointer hover:underline" onClick={() => { setCreate(false), reset() }}>Cancelar</a>
+                                    </>
                                 }
                             </div>
                         </>
                     }
 
-
-                    {type === 'checkout' && game &&
-                        <>
-                            <h4 className='mt-3 text-xl font-medium text-center text-gray-600'>Conclua Sua Compra</h4>
-
-                            <div className=" py-4 mb-4 flex items-center gap-4 text-neutral-700 border-b border-neutral-300 peer ">
-                                <input className='w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:green-blue-500  focus:ring-2 ' type="checkbox" id='check' />
-                                <label htmlFor='check'>Estou ciente dos <span className='text-green-600 cursor-pointer hover:opacity-70'>"Termos & Condições"</span> antes de efetuar esta compra. </label>
-                            </div>
-
-                            <div className="w-full flex gap-2 text-neutral-800 font-medium">
-                                <img className='w-16 shadow-md shadow-neutral-400' src={game.poster} alt='' />
-                                <p>{game.name}</p>
-                                <p className='w-max ml-auto text-nowrap'>R$ {game.price}</p>
-                            </div>
-
-                            <div className="w-full my-4 flex flex-col items-end text-neutral-500">
-                                <p>Desconto: R${calculateDiscount(Number(game.price), game.promo).toFixed(2)}</p>
-                                <p>Taxas: R$ 0.00</p>
-                                <h5 className=' font-medium text-xl text-green-600'>Total: R$ {(Number(game.price) - calculateDiscount(Number(game.price), game.promo)).toFixed(2)}</h5>
-                            </div>
-
-                            <button className={`${style.btnMain} hidden peer-has-[:checked]:block`} onClick={setUser} >Comprar</button>
-                            <button className={`${style.btnMain} opacity-70  peer-has-[:checked]:hidden`} disabled >Aceite os termos</button>
-                        </>
-                    }
+                    {type === 'checkout' && game && setUser && <Cashout game={game} onClick={setUser} />}
 
                     <button className=' absolute top-2 right-4 text-2xl text-red-500 duration-300 hover:text-neutral-500' title='Fechar' aria-label='Fechar formulário' onClick={() => onClick(false)}>
                         <i className="fa-solid fa-xmark"></i>
