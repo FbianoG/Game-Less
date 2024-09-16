@@ -59,15 +59,19 @@ const SideBar = () => {
                     Game Less
                 </Link>
 
-                <Link className={style.navItem} to='/libs' >
-                    <IoGameController className='text-2xl' />
-                    Biblioteca
-                </Link>
+                {user &&
+                    <>
+                        <Link className={style.navItem} to='/libs' >
+                            <IoGameController className='text-2xl' />
+                            Biblioteca
+                        </Link>
 
-                <Link className={style.navItem} to='/store'>
-                    <IoMdCart className='text-2xl' />
-                    Carrinho
-                </Link>
+                        <Link className={style.navItem} to='/store'>
+                            <IoMdCart className='text-2xl' />
+                            Carrinho
+                        </Link>
+                    </>
+                }
             </nav>
 
             {user &&

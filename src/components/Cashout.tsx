@@ -61,7 +61,7 @@ const Cashout: React.FC<CashoutProps> = ({ game, onClick }) => {
                     <div className="w-full flex gap-2 text-neutral-800 font-medium">
                         <img className='w-16 shadow-md shadow-neutral-400' src={game.poster} alt='' />
                         <p>{game.name}</p>
-                        <p className='w-max ml-auto text-nowrap'>R$ {game.price}</p>
+                        <p className='w-max ml-auto text-nowrap'>R$ {Number(game.price).toFixed(2)}</p>
                     </div>
 
                     <div className="w-full my-4 flex flex-col items-end text-neutral-500">

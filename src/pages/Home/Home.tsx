@@ -22,12 +22,11 @@ const Home = () => {
     const loadGames = async () => setGames(await getGames())
 
     const style = {
-        btn: 'p-4 rounded-lg uppercase flex items-center gap-2 text-neutral-200 hover:brightness-125 duration-300',
+        btn: 'p-4 rounded-lg uppercase flex items-center gap-2 text-neutral-200 hover:brightness-125 duration-300 ',
         sbtn: { background: 'linear-gradient(to bottom right, #17b346, #1a69c4)' }
     }
 
     return (
-
         <>
             <SideBar />
 
